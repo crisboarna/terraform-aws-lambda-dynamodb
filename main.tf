@@ -1,6 +1,7 @@
 #required otherwise circular dependency between IAM and Lambda
 locals {
   lambda_function_name = "${var.project}-${var.lambda_function_name}-${terraform.workspace}"
+  dynamodb_tables_count = "${length(var.dynamodb_table_properties)}"
 }
 
 module "lambda" {
@@ -49,4 +50,5 @@ module "iam" {
   lambda_name = "${local.lambda_function_name}"
   dynamodb_arn_list = "${module.dynamodb.dynamodb_table_arns}"
   dynamodb_policy_action_list = "${var.dynamodb_policy_action_list}"
+  dynamodb_tables_count = "${local.dynamodb_tables_count}"
 }
