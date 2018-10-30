@@ -16,7 +16,7 @@ Terraform module which deploys Lambda & DynamoDB to be used as building block.
 **Lambda**
 
 This module is created with full customization by user.
-Exports S3 bucket to allow usage by multiple Lambda's
+Exports S3 bucket to allow usage by multiple Lambda's but given `lambda_code_s3_bucket_use_existing=true` it will use existing S3 bucket provided in `lambda_code_s3_bucket_existing`.
 - This module by default, if created allows accompanying Lambda access to `dynamodb:PutItem`, `dynamodb:DescribeTable`, `dynamodb:DeleteItem`, `dynamodb:GetItem`, `dynamodb:Scan`, `dynamodb:Query` all DynamoDB tables.
 
 
