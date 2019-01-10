@@ -130,7 +130,13 @@ module "lambda_dynamodb" {
    ]]
    
    dynamodb_policy_action_list = ["dynamodb:PutItem", "dynamodb:DescribeTable", "dynamodb:DeleteItem", "dynamodb:GetItem", "dynamodb:Scan", "dynamodb:Query"]
-    
+   dynamodb_table_ttl = [[
+      {
+        attribute_name = "ttl"
+        enabled = true
+      }
+   ]]
+       
   #Tags
   tags = {
     project = "Awesome Project"

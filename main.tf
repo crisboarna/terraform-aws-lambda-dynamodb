@@ -41,6 +41,7 @@ module "dynamodb" {
   dynamodb_table_properties         = "${var.dynamodb_table_properties}"
   dynamodb_table_attributes         = "${var.dynamodb_table_attributes}"
   dynamodb_table_secondary_index    = "${var.dynamodb_table_secondary_index}"
+  dynamodb_table_ttl                = "${var.dynamodb_table_ttl}"
 
   #Tags
   tags                              = "${var.tags}"
