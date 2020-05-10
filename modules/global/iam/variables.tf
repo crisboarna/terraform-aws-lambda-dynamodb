@@ -2,6 +2,12 @@ variable "lambda_name" {
   description = "The name of the Lambda function"
 }
 
+variable "lambda_layers" {
+  description = "Lambda Layer ARNS"
+  type = list(string)
+  default = []
+}
+
 variable "dynamodb_arn_list" {
   type = "list"
   description = "List of ARN's to allow permissions for"
